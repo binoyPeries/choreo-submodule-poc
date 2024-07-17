@@ -1,3 +1,6 @@
 [submodule "submodule"]
 	path = submodule
 	url = https://github.com/choreo-poc/submodule-repo.git
+[submodule "submodule-pvt"]
+	path = submodule-pvt
+	url = https://github.com/choreo-poc/private-submodule-repo.git
