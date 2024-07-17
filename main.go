@@ -6,6 +6,7 @@ import (
 	"net/http"
 
 	submodule "github.com/binoyPeries/choreo-submodule-poc/submodule"
+	pvtsubmodule "github.com/binoyPeries/choreo-submodule-poc/submodule-pvt"
 
 	"github.com/gorilla/mux"
 )
@@ -15,7 +16,8 @@ func main() {
 
 	router.HandleFunc("/greeter", func(w http.ResponseWriter, r *http.Request) {
 		helloValue := submodule.Hello()
-		fmt.Fprintf(w, "Submodule function executed, response: %s", helloValue)
+		workValue := pvtsubmodule.Work()
+		fmt.Fprintf(w, "Submodules function executed, responses are : %s && %s", helloValue, workValue)
 
 	})
 
