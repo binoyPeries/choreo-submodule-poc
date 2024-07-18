@@ -5,8 +5,10 @@ import (
 	"log"
 	"net/http"
 
+	sameOrgSubmodule "github.com/binoyPeries/choreo-submodule-poc/same-org-submodule"
 	submodule "github.com/binoyPeries/choreo-submodule-poc/submodule"
-	pvtsubmodule "github.com/binoyPeries/choreo-submodule-poc/submodule-pvt"
+
+	// pvtsubmodule "github.com/binoyPeries/choreo-submodule-poc/submodule-pvt"
 
 	"github.com/gorilla/mux"
 )
@@ -16,8 +18,9 @@ func main() {
 
 	router.HandleFunc("/greeter", func(w http.ResponseWriter, r *http.Request) {
 		helloValue := submodule.Hello()
-		workValue := pvtsubmodule.Work()
-		fmt.Fprintf(w, "Submodules function executed, responses are : %s && %s", helloValue, workValue)
+		// workValue := pvtsubmodule.Work()
+		ownSubmoduleValue := sameOrgSubmodule.HelloWorld()
+		fmt.Fprintf(w, "Submodules function executed, responses are : %s && %s", helloValue, ownSubmoduleValue)
 
 	})
 
