@@ -7,7 +7,7 @@ WORKDIR /app
 COPY . .
 
 # Build the Go program inside the container
-RUN go build -o go-greeter .
+RUN go build -o submodule-poc .
 
 # Use a small Alpine Linux image as the base image for the final container
 FROM alpine:latest
